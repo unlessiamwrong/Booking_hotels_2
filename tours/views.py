@@ -17,7 +17,7 @@ def main_view(request: WSGIRequest) -> HttpResponse:
     return render(request, 'index.html', context=context)
 
 
-def departure_view(request: WSGIRequest, departure) -> render:
+def departure_view(request: WSGIRequest, departure: str) -> HttpResponse:
     tours_copy_test = deepcopy(tours)
     context = {'current_tours': [], 'tours_prices': [], 'tours_nights': []}
     for tour_id, tour in tours_copy_test.items():
@@ -32,7 +32,7 @@ def departure_view(request: WSGIRequest, departure) -> render:
     return render(request, 'departure.html', context=context)
 
 
-def tour_view(request: WSGIRequest, id) -> HttpResponse:
+def tour_view(request: WSGIRequest, id: int) -> HttpResponse:
     tours_copy_tour = deepcopy(tours)
     for key, value in tours_copy_tour.items():
         value['id'] = key
