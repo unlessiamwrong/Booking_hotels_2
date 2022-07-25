@@ -1,11 +1,11 @@
-from random import sample
 from copy import deepcopy
+from random import sample
 
 from django.core.handlers.wsgi import WSGIRequest
 from django.http.response import HttpResponse
 from django.shortcuts import render
 
-from tours.data import tours, departures, title, subtitle, description
+from tours.data import departures, description, subtitle, title, tours
 
 
 def main_view(request: WSGIRequest) -> HttpResponse:
