@@ -9,7 +9,7 @@
     </section>
     <!-- CARDS -->
      <div class="row mt-5">
- {% for tour in current_tours %}
+ {% for tour_id, tour in current_tours.items %}
       <div class="col-4">
       <div class="card mb-4">
           <div class="embed-responsive embed-responsive-16by9">
@@ -18,7 +18,7 @@
           <div class="card-body">
             <h2 class="h5 card-title">{{ tour.title }}</h2>
             <p class="card-text">{{ tour.description|truncatechars:150 }}</p>
-            <a href="/tour/{{ tour.id }}/" class="btn btn-sm btn-primary">Подробнее</a>
+            <a href="/tour/{{ tour_id }}/" class="btn btn-sm btn-primary">Подробнее</a>
           </div>
           </div>
       </div>
